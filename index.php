@@ -1,6 +1,5 @@
 
 <?php
-  session_start();
   if(array_key_exists('username',$_POST) AND array_key_exists('password',$_POST)){
     $link = mysqli_connect("localhost","root","your_password","login");
 
@@ -27,7 +26,6 @@
         }
     }
   }
-  session_destroy();
  ?>
 
 <!DOCTYPE html>
