@@ -16,7 +16,7 @@
         $result = mysqli_query($link,$query);
         $row = mysqli_fetch_array($result);
 
-        if (mysqli_real_escape_string($link,$_POST['password']== isset($row['password']))){
+        if (mysqli_real_escape_string($link,$_POST['password']== $row['password'])){
           echo "Access Granted";
           /*$_SESSION['username'] = $row['username'];*/
           header("refresh:1; url=movies_list.php");
