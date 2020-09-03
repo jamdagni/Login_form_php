@@ -16,7 +16,7 @@
       $actor = $_POST['actor'];
       $ratings = $_POST['ratings'];
 
-      mysqli_query($link,"INSERT INTO movies_list(movie_name,year_of_release,actor,ratings) VALUES('$movie','$year','$actor','$ratings')") or die('wtf');
+      mysqli_query($link,"INSERT INTO movies_list(movie_name,year_of_release,actor,ratings) VALUES('$movie','$year','$actor','$ratings')") or die(mysqli_error());
 
       $_SESSION['message'] = "Record has been saved";
       $_SESSION['msg_type'] = "success";
