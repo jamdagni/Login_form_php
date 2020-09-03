@@ -1,7 +1,8 @@
 
 <?php
+  session_start();
   if(array_key_exists('username',$_POST) AND array_key_exists('password',$_POST)){
-    $link = mysqli_connect("localhost","root","12345","login");
+    $link = mysqli_connect("localhost","root","your_password","login");
 
     if(mysqli_connect_error()){
       die("problem in connecting with database");
@@ -18,12 +19,15 @@
 
         if (mysqli_real_escape_string($link,$_POST['password']== isset($row['password']))){
           echo "Access Granted";
+          /*$_SESSION['username'] = $row['username'];*/
           header("refresh:1; url=movies_list.php");
+
         }else {
           echo "Enter correct password";
         }
     }
   }
+  session_destroy();
  ?>
 
 <!DOCTYPE html>
